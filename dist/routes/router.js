@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var server_1 = __importDefault(require("../clasess/server"));
 var grafica_1 = require("../clasess/grafica");
-var router = (0, express_1.Router)();
+var router = express_1.Router();
 var grafica = new grafica_1.GraficaData();
 router.get('/mensajes', function (req, res) {
     res.json({

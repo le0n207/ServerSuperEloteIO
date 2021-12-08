@@ -12,6 +12,7 @@ exports.conectarCliente = conectarCliente;
 var configurarUsuario = function (cliente, io) {
     cliente.on('configurar-usuario', function (payload, callback) {
         exports.usuariosConectados.actualizarNombre(cliente.id, payload.nombre);
+        exports.usuariosConectados.actualizarIdOneSignal(cliente.id, payload.idoneSignal);
         exports.usuariosConectados.actualizarCoors(cliente.id, payload.coordenadas);
         if (payload.rol == '1') {
             exports.usuariosConectados.actualizarRol(cliente.id, payload.rol);

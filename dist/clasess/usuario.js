@@ -7,6 +7,7 @@ var Usuario = /** @class */ (function () {
         this.nombre = 'sin-nombre';
         this.sala = '0';
         this.coordenadas = 'sin-coordenadas';
+        this.idoneSignal = '';
     }
     return Usuario;
 }());

@@ -32,10 +32,10 @@ var Server = /** @class */ (function () {
     //Define lo que se ejecuta al principio al correr el proyecto
     // es privado para que no se pueda acceder a el desde ningun lugar, pero si mediante la instancia
     function Server() {
-        this.app = (0, express_1.default)();
+        this.app = express_1.default();
         this.port = enviroment_1.SERVER_PORT;
         this.httpServer = new http_1.default.Server(this.app);
-        this.io = (0, socket_io_1.default)(this.httpServer);
+        this.io = socket_io_1.default(this.httpServer);
         this.listenSockets();
     }
     Object.defineProperty(Server, "instance", {

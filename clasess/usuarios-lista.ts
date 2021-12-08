@@ -37,6 +37,19 @@ export class UsuariosLista{
         console.log('El usuario ' + usuario_old + ' cambio su nombre a: '+ nombre);
         console.log(this.lista);
     }
+    
+    public actualizarIdOneSignal(id: string, idoneSignal: string){
+        let usuario_old = '';
+        for (let usuario of this.lista) {
+            if (usuario.id === id) {
+                usuario_old = usuario.nombre;
+                usuario.idoneSignal = idoneSignal;
+                break;
+            }
+        }
+        console.log('El usuario ' + usuario_old + ' cambio su idoneSignal a: '+ idoneSignal);
+        console.log(this.lista);
+    }
 
     public actualizarCoors(id: string, coors: string){
         let usuario_old = '';

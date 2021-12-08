@@ -11,8 +11,9 @@ export const conectarCliente = (cliente: Socket, io: socketIO.Server)=>{
 }
 
 export const configurarUsuario = (cliente: Socket, io: socketIO.Server)=>{
-    cliente.on('configurar-usuario', (payload: {nombre: string, coordenadas:any, rol:any}, callback: Function) => {
+    cliente.on('configurar-usuario', (payload: {nombre: string, idoneSignal: string, coordenadas:any, rol:any}, callback: Function) => {
         usuariosConectados.actualizarNombre(cliente.id, payload.nombre);
+        usuariosConectados.actualizarIdOneSignal(cliente.id, payload.idoneSignal);
         usuariosConectados.actualizarCoors(cliente.id, payload.coordenadas);
         if(payload.rol == '1'){
             usuariosConectados.actualizarRol(cliente.id, payload.rol);

@@ -36,6 +36,19 @@ var UsuariosLista = /** @class */ (function () {
         console.log('El usuario ' + usuario_old + ' cambio su nombre a: ' + nombre);
         console.log(this.lista);
     };
+    UsuariosLista.prototype.actualizarIdOneSignal = function (id, idoneSignal) {
+        var usuario_old = '';
+        for (var _i = 0, _a = this.lista; _i < _a.length; _i++) {
+            var usuario = _a[_i];
+            if (usuario.id === id) {
+                usuario_old = usuario.nombre;
+                usuario.idoneSignal = idoneSignal;
+                break;
+            }
+        }
+        console.log('El usuario ' + usuario_old + ' cambio su idoneSignal a: ' + idoneSignal);
+        console.log(this.lista);
+    };
     UsuariosLista.prototype.actualizarCoors = function (id, coors) {
         var usuario_old = '';
         for (var _i = 0, _a = this.lista; _i < _a.length; _i++) {
